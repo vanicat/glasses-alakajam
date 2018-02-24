@@ -37,8 +37,14 @@ window.onload = function () {
   Phaser.Gamepad.XBOX360_STICK_LEFT_BUTTON = 9
   Phaser.Gamepad.XBOX360_STICK_RIGHT_BUTTON = 10
 
+  Phaser.Gamepad.XBOX360_STICK_LEFT_X = 0
+  Phaser.Gamepad.XBOX360_STICK_LEFT_Y = 1
+  Phaser.Gamepad.XBOX360_LEFT_TRIGGER = 2
   Phaser.Gamepad.XBOX360_STICK_RIGHT_X = 3
   Phaser.Gamepad.XBOX360_STICK_RIGHT_Y = 4
+  Phaser.Gamepad.XBOX360_RIGHT_TRIGGER = 5
+  Phaser.Gamepad.XBOX360_DPAD_LEFT_RIGHT = 6
+  Phaser.Gamepad.XBOX360_DPAD_UP_DOWN = 7
 
   var game = new Phaser.Game(800, 600, Phaser.AUTO, '')
   game.state.add('main', new Starting(game))
