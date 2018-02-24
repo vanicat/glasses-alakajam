@@ -17,7 +17,9 @@ TheGame.prototype = {
     this.layer = this.map.createLayer('background')
     this.layer.resizeWorld()
 
-    this.player = this.game.add.sprite(300, 300, 'theman')
+    this.start = this.findObject('start')
+
+    this.player = this.game.add.sprite(this.start.x, this.start.y, 'theman')
     this.player.anchor.setTo(0.5, 0.5)
 
     this.camera.follow(this.player)
@@ -46,5 +48,14 @@ TheGame.prototype = {
   },
 
   render: function () {
+  },
+
+  findObject: function (name) {
+    var objects = this.map.objects.GameObject
+    for (let o in objects) {
+      if (objects[o].name === name) {
+        return objects[o]
+      }
+    }
   }
 }
