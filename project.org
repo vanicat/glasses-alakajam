@@ -1,0 +1,8 @@
+#+TITLE: my ajakajam project
+
+* idea
+- phantom
+- porte monstre trésor
+- passage secret?
+- lunette pour voir les passages ?
+
