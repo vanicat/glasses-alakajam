@@ -1,5 +1,6 @@
 var TheGame = function (game) {
   this.game = game
+  this.camera = game.camera
   this.pause = false
 }
 
