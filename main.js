@@ -9,10 +9,17 @@ Starting.prototype = {
 
   create: function () {
     this.game.input.gamepad.start()
+    this.pad1 = this.game.input.gamepad.pad1
+
+    var style = { font: 'bold 32px Arial', fill: '#fff', boundsAlignH: 'center', boundsAlignV: 'middle' }
+
+    this.game.add.text(0, 0, 'You need a gamepad. Start to continue', style)
   },
 
   update: function () {
-    this.game.state.start('glasses')
+    if (this.pad1.isDown(Phaser.Gamepad.XBOX360_START)) {
+      this.game.state.start('glasses')
+    }
   },
 
   render: function () {
