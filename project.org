@@ -5,4 +5,9 @@
 - porte monstre trésor
 - passage secret?
 - lunette pour voir les passages ?
+  - lunnette de couleur...
+  - lunette de près ou de loin
 
+* phaser bug ?
+  RIGHT PAD horizontal: 3
+  RIGHT PAD verticale: 4
