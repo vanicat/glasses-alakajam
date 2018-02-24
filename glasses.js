@@ -11,6 +11,12 @@ TheGame.prototype = {
   create: function () {
     this.game.stage.backgroundColor = '#736357'
 
+    this.map = this.game.add.tilemap('fst-map')
+    this.map.addTilesetImage('tilleset', 'tilleset')
+
+    this.layer = this.map.createLayer('background')
+    this.layer.resizeWorld()
+
     this.player = this.game.add.sprite(300, 300, 'theman')
     this.player.anchor.setTo(0.5, 0.5)
 

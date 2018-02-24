@@ -5,6 +5,9 @@ var Starting = function (game) {
 Starting.prototype = {
   preload: function () {
     this.game.load.image('theman', 'assets/theman.svg')
+    this.game.load.tilemap('fst-map', 'assets/first-map.json', null, Phaser.Tilemap.TILED_JSON)
+
+    this.load.image('tilleset', 'assets/tilleset.svg')
   },
 
   create: function () {
