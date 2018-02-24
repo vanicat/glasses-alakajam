@@ -14,7 +14,6 @@ TheGame.prototype = {
     this.sprite.anchor.setTo(0.5, 0.5)
 
     this.pad1 = this.game.input.gamepad.pad1
-    this.pad1.onAxisCallback = this.axis
   },
 
   update: function () {
@@ -38,10 +37,5 @@ TheGame.prototype = {
   },
 
   render: function () {
-  },
-
-  axis: function (arg1, arg2, arg3) {
-    console.log(arg1, arg2, arg3)
   }
-
 }
