@@ -1,0 +1,12 @@
+#!/bin/sh
+
+PORT=${1:-8080}
+
+echo server on http://localhost:$PORT/
+
+# while true; do
+#     nc -v -l -p 8080 -c "micro-httpd $1"
+#     echo served
+# done
+
+python3 -m http.server $PORT
