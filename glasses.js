@@ -17,22 +17,22 @@ TheGame.prototype = {
   },
 
   update: function () {
-    var rightStickX = this.pad1.axis(Phaser.Gamepad.XBOX360_STICK_RIGHT_X)
-    var rightStickY = this.pad1.axis(Phaser.Gamepad.XBOX360_STICK_RIGHT_Y)
+    var leftStickX = this.pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X)
+    var leftStickY = this.pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y)
 
-    if (rightStickX) {
-      this.sprite.x += rightStickX * 10
+    if (leftStickX) {
+      this.sprite.x += leftStickX * 10
     } else {
-      rightStickX = 0
+      leftStickX = 0
     }
 
-    if (rightStickY) {
-      this.sprite.y += rightStickY * 10
+    if (leftStickY) {
+      this.sprite.y += leftStickY * 10
     } else {
-      rightStickY = 0
+      leftStickY = 0
     }
-    if (rightStickX || rightStickY) {
-      this.sprite.rotation = Math.atan2(rightStickX, -rightStickY)
+    if (leftStickX || leftStickY) {
+      this.sprite.rotation = Math.atan2(leftStickX, -leftStickY)
     }
   },
 
