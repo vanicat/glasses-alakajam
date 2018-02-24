@@ -20,6 +20,8 @@ TheGame.prototype = {
     this.player = this.game.add.sprite(300, 300, 'theman')
     this.player.anchor.setTo(0.5, 0.5)
 
+    this.camera.follow(this.player)
+
     this.pad1 = this.game.input.gamepad.pad1
   },
 
