@@ -94,6 +94,7 @@ TheGame.prototype = {
     if (!s.isOn && this.action) {
       s.isOn = true
       s.frame = 1
+      console.log(s.open)
       this.map.removeTile(s.gate1x, s.gate1y)
       this.map.removeTile(s.gate2x, s.gate2y)
     }

@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="9.25"
-     inkscape:cx="141.04463"
-     inkscape:cy="42.967247"
+     inkscape:zoom="1.15625"
+     inkscape:cx="-49.548641"
+     inkscape:cy="-78.064733"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -562,5 +562,17 @@
        inkscape:transform-center-x="-0.44310416"
        inkscape:transform-center-y="-1.1088189"
        transform="rotate(26.976925)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:37.64364243px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.94109112"
+       x="181.50342"
+       y="337.34265"
+       id="text705"
+       transform="scale(1.0625964,0.94109111)"><tspan
+         sodipodi:role="line"
+         id="tspan703"
+         x="181.50342"
+         y="337.34265"
+         style="stroke-width:0.94109112">G</tspan></text>
   </g>
 </svg>

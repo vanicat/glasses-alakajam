@@ -104,6 +104,30 @@
                  "width":32,
                  "x":1808,
                  "y":1045
+                }, 
+                {
+                 "gid":97,
+                 "height":32,
+                 "id":25,
+                 "name":"gate1.1",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1792.5,
+                 "y":1120
+                }, 
+                {
+                 "gid":97,
+                 "height":32,
+                 "id":26,
+                 "name":"gate1.2",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1823.25,
+                 "y":1120.25
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -111,7 +135,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":25,
+ "nextobjectid":28,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.0.3",
@@ -128,33 +152,6 @@
          "spacing":0,
          "tilecount":100,
          "tileheight":32,
-         "tiles":
-            {
-             "90":
-                {
-                 "type":"lamp"
-                },
-             "91":
-                {
-                 "type":"start"
-                },
-             "92":
-                {
-                 "type":"glasses"
-                },
-             "93":
-                {
-                 "type":"end"
-                },
-             "94":
-                {
-                 "type":"switchon"
-                },
-             "95":
-                {
-                 "type":"switchoff"
-                }
-            },
          "tilewidth":32
         }],
  "tilewidth":32,
