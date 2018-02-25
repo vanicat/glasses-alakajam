@@ -105,7 +105,7 @@ TheGame.prototype = {
       if (this.level < TheGame.nbLevels) {
         this.game.state.restart(true, false, this.level, this.light, this.view)
       } else {
-        this.game.state.start('main')
+        this.game.state.start('win')
       }
     }
   },

@@ -28,6 +28,27 @@ var loading = {
   }
 }
 
+var winning = {
+  create: function () {
+    this.pad1 = this.game.input.gamepad.pad1
+
+    var style = { font: 'bold 32px Arial', fill: '#fff', boundsAlignH: 'center', boundsAlignV: 'middle' }
+
+    this.game.add.text(0, 0, 'Succes, you found the way out', style)
+    this.game.add.text(0, 32 * 1, 'Now, you can try again', style)
+
+    this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER)
+    this.spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR)
+  },
+
+  update: function () {
+    if (this.pad1.isDown(Phaser.Gamepad.XBOX360_START) || this.enterKey.isDown ||
+        this.pad1.isDown(Phaser.Gamepad.XBOX360_A) || this.spaceKey.isDown) {
+      this.game.state.start('main', true, false)
+    }
+  }
+}
+
 var Starting = function (game) {
   this.game = game
 }
@@ -101,5 +122,6 @@ window.onload = function () {
   game.state.add('loading', loading)
   game.state.add('main', new Starting(game))
   game.state.add('glasses', new TheGame(game))
+  game.state.add('win', winning)
   game.state.start('loading')
 }
