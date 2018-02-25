@@ -47,7 +47,7 @@ Starting.prototype = {
 
   update: function () {
     if (this.pad1.isDown(Phaser.Gamepad.XBOX360_START) || this.enterKey.isDown) {
-      this.game.state.start('glasses', true, false, 200, 150)
+      this.game.state.start('glasses', true, false, 0, 200, 150)
     }
   },
 
@@ -78,6 +78,6 @@ window.onload = function () {
   var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.WEBGL, '')
   game.state.add('loading', loading)
   game.state.add('main', new Starting(game))
-  game.state.add('glasses', new TheGame(game, 'fst-map'))
+  game.state.add('glasses', new TheGame(game))
   game.state.start('loading')
 }

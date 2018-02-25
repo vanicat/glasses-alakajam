@@ -1,10 +1,10 @@
 const SPEED = 200
 
-var TheGame = function (game, map) {
+var TheGame = function (game) {
   this.game = game
   this.camera = game.camera
   this.pause = false
-  this.mapName = map
+  this.mapName = undefined
   this.map = undefined
   this.light = undefined
   this.view = undefined
@@ -14,12 +14,15 @@ var TheGame = function (game, map) {
   this.lamps = undefined
   this.cursors = undefined
   this.switch = undefined
+  this.level = undefined
 }
 
 TheGame.prototype = {
-  init: function (light, view) {
+  init: function (level, light, view) {
     this.light = light
     this.view = view
+    this.level = level
+    this.mapName = TheGame.levels[level]
   },
 
   preload: function () {
