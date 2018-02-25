@@ -45,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -105,12 +105,5 @@
        sodipodi:end="3.1744153"
        sodipodi:open="true"
        d="M 40.85325,31.547899 A 9.987752,11.672369 0 0 1 35.764442,41.719714 9.987752,11.672369 0 0 1 25.683563,41.526352 9.987752,11.672369 0 0 1 20.883125,31.16485" />
-    <ellipse
-       style="fill:#d40000"
-       id="path312"
-       cx="-88.625"
-       cy="-20.5"
-       rx="20.375"
-       ry="7.5" />
   </g>
 </svg>

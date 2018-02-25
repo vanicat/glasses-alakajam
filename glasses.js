@@ -168,6 +168,9 @@ TheGame.prototype = {
     this.player = this.game.add.sprite(this.start.x, this.start.y, 'theman')
     this.player.anchor.setTo(0.5, 0.5)
     this.physics.enable(this.player, Phaser.Physics.ARCADE)
+    var xoffset = (this.player.width - 36) / 2
+    var yoffset = (this.player.height - 36) / 2
+    this.player.body.setSize(36, 36, xoffset, yoffset)
 
     this.camera.follow(this.player)
   },
