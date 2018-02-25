@@ -1,0 +1,6 @@
+{
+    "standard.options": {
+        "globals": ["Phaser", "TheGame", "fetch"],
+        "ignore": ["filters/**"]
+    } 
+}
