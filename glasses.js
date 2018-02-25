@@ -104,10 +104,10 @@ TheGame.prototype = {
   },
 
   createPlayer: function () {
-    this.start = this.findObject('start');
-    this.player = this.game.add.sprite(this.start.x, this.start.y, 'theman');
-    this.player.anchor.setTo(0.5, 0.5);
-    this.physics.enable(this.player, Phaser.Physics.ARCADE);
+    this.start = this.findObject('start')
+    this.player = this.game.add.sprite(this.start.x, this.start.y, 'theman')
+    this.player.anchor.setTo(0.5, 0.5)
+    this.physics.enable(this.player, Phaser.Physics.ARCADE)
 
     this.camera.follow(this.player)
   }
