@@ -3,6 +3,8 @@ var TheGame = function (game, map) {
   this.camera = game.camera
   this.pause = false
   this.map = map
+  this.light = 150
+  this.view = 100
   this.blur = undefined
   this.dark = undefined
 }
@@ -12,7 +14,7 @@ TheGame.prototype = {
   },
 
   create: function () {
-    this.game.stage.backgroundColor = '#736357'
+    this.game.stage.backgroundColor = '#000000'
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
 
     this.map = this.game.add.tilemap(this.map)
@@ -54,6 +56,7 @@ TheGame.prototype = {
   update: function () {
     this.game.physics.arcade.collide(this.player, this.layer)
 
+    this.movePlayer()
     var leftStickX = this.pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X)
     var leftStickY = this.pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y)
 
@@ -82,5 +85,20 @@ TheGame.prototype = {
         return objects[o]
       }
     }
+  },
+
+  light: function (power) {
+    if (power > this.light) {
+      this.dark = power
+    }
+  },
+
+  view: function (dist) {
+    if (dist > this.view) {
+      this.view = dist
+    }
+  },
+
+  movePlayer: function () {
   }
 }
