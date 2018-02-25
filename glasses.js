@@ -32,7 +32,7 @@ TheGame.prototype = {
     this.map = this.game.add.tilemap(this.mapName)
     this.map.addTilesetImage('tilleset', 'tilleset')
 
-    this.map.setCollision([0, 1, 2, 3, 4, 5, 6, 7, 8], true, this.layer)
+    this.map.setCollisionBetween(0, 48, true, this.layer)
 
     this.layer = this.map.createLayer('background')
     this.layer.resizeWorld()
@@ -167,6 +167,9 @@ TheGame.prototype = {
     this.start = this.findObject('start')
     this.player = this.game.add.sprite(this.start.x, this.start.y, 'theman')
     this.player.anchor.setTo(0.5, 0.5)
+
+    console.log(this.player)
+
     this.physics.enable(this.player, Phaser.Physics.ARCADE)
     var xoffset = (this.player.width - 36) / 2
     var yoffset = (this.player.height - 36) / 2
