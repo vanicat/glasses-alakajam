@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="6.4"
-     inkscape:cx="124.92534"
-     inkscape:cy="39.524872"
+     inkscape:zoom="9.0509668"
+     inkscape:cx="10.855518"
+     inkscape:cy="226.68667"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -236,5 +236,24 @@
          x="80.768517"
          y="371.01913"
          style="stroke-width:1.18834698">E</tspan></text>
+    <rect
+       style="fill:#ff6600;stroke:#803300;stroke-width:2.25351262;stroke-opacity:1"
+       id="rect4895"
+       width="53.761921"
+       height="43.880039"
+       x="6.7129464"
+       y="82.788513" />
+    <path
+       style="fill:#ff6600;stroke:#803300;stroke-width:2.55192327;stroke-opacity:1"
+       id="path4897"
+       sodipodi:type="arc"
+       sodipodi:cx="33.621719"
+       sodipodi:cy="84.45919"
+       sodipodi:rx="27.030577"
+       sodipodi:ry="18.466324"
+       sodipodi:start="3.1859507"
+       sodipodi:end="6.2353723"
+       sodipodi:open="true"
+       d="M 6.6177315,83.640329 A 27.030577,18.466324 0 0 1 33.575025,65.992894 27.030577,18.466324 0 0 1 60.621405,83.576596" />
   </g>
 </svg>

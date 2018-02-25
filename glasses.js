@@ -160,7 +160,9 @@ TheGame.prototype = {
 
   createGoal: function () {
     this.end = this.findObject('end')
+
     this.goal = this.game.add.sprite(this.end.x, this.end.y, 'empty')
+    this.goal.anchor.setTo(0.5, 0.5)
     this.physics.enable(this.goal, Phaser.Physics.ARCADE)
   },
 
