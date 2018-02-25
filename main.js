@@ -8,6 +8,7 @@ Starting.prototype = {
     this.game.load.tilemap('fst-map', 'assets/first-map.json', null, Phaser.Tilemap.TILED_JSON)
 
     this.game.load.script('MyBlur', 'filters/MyBlur.js')
+    this.game.load.script('Black', 'filters/black.js')
 
     this.load.image('tilleset', 'assets/tilleset.svg')
   },

@@ -3,6 +3,8 @@ var TheGame = function (game, map) {
   this.camera = game.camera
   this.pause = false
   this.map = map
+  this.blur = undefined
+  this.dark = undefined
 }
 
 TheGame.prototype = {
@@ -40,7 +42,13 @@ TheGame.prototype = {
 
     this.blur.limit = 100
 
-    this.layer.filters = [this.blur]
+    this.black = this.game.add.filter('Black')
+    this.black.setResolution(this.game.width, this.game.height)
+    this.black.limit = 150
+    this.black.centerx = this.game.width / 2
+    this.black.centery = this.game.height / 2
+
+    this.layer.filters = [this.blur, this.black]
   },
 
   update: function () {
