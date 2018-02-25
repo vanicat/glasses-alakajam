@@ -1,8 +1,14 @@
-var Starting = function (game) {
-  this.game = game
+var booting = {
+  create: function () {
+    var style = { font: 'bold 32px Arial', fill: '#fff', boundsAlignH: 'center', boundsAlignV: 'middle' }
+
+    this.game.add.text(0, 0, 'Better with a gamepad. Start or enter to continue', style)
+
+    this.game.state.start('loading')
+  }
 }
 
-Starting.prototype = {
+var loading = {
   preload: function () {
     this.game.load.image('theman', 'assets/theman.svg')
     this.game.load.image('lamp', 'assets/lamp.svg')
@@ -14,6 +20,18 @@ Starting.prototype = {
     this.game.load.script('Black', 'filters/black.js')
 
     this.load.image('tilleset', 'assets/tilleset.svg')
+  },
+  create: function () {
+    this.game.state.start('main')
+  }
+}
+
+var Starting = function (game) {
+  this.game = game
+}
+
+Starting.prototype = {
+  preload: function () {
   },
 
   create: function () {
@@ -58,7 +76,9 @@ window.onload = function () {
   Phaser.Gamepad.XBOX360_DPAD_UP_DOWN = 7
 
   var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.WEBGL, '')
+  game.state.add('booting', booting)
+  game.state.add('loading', loading)
   game.state.add('main', new Starting(game))
   game.state.add('glasses', new TheGame(game, 'fst-map'))
-  game.state.start('main')
+  game.state.start('booting')
 }
