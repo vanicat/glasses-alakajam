@@ -22,11 +22,13 @@ Starting.prototype = {
 
     var style = { font: 'bold 32px Arial', fill: '#fff', boundsAlignH: 'center', boundsAlignV: 'middle' }
 
-    this.game.add.text(0, 0, 'You need a gamepad. Start to continue', style)
+    this.game.add.text(0, 0, 'Better with a gamepad. Start or enter to continue', style)
+
+    this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER)
   },
 
   update: function () {
-    if (this.pad1.isDown(Phaser.Gamepad.XBOX360_START)) {
+    if (this.pad1.isDown(Phaser.Gamepad.XBOX360_START) || this.enterKey.isDown) {
       this.game.state.start('glasses', true, false, 200, 150)
     }
   },
