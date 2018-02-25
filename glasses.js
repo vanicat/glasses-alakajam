@@ -35,7 +35,6 @@ TheGame.prototype = {
 
     this.blur.blur = 20
     this.blur.setResolution(this.game.width, this.game.height)
-    console.log(this.game.height, this.game.width)
     this.blur.centerx = this.game.width / 2
     this.blur.centery = this.game.height / 2
 
