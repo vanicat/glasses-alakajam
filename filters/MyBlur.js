@@ -28,9 +28,13 @@ Phaser.Filter.MyBlur = function (game) {
           "if (2.0*dist < limit) realBlur = 0.0;",
 
           "sum += texture2D(uSampler, vec2(vTextureCoord.x, vTextureCoord.y)) * 0.1;",
-          "sum += texture2D(uSampler, vec2(vTextureCoord.x + 4.47*realBlur, vTextureCoord.y - 2.0*realBlur)) * 0.3;",
-          "sum += texture2D(uSampler, vec2(vTextureCoord.x - 4.47*realBlur, vTextureCoord.y - 2.0*realBlur)) * 0.3;",
-          "sum += texture2D(uSampler, vec2(vTextureCoord.x, vTextureCoord.y + 4.0*realBlur)) * 0.3;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x + 4.47*realBlur, vTextureCoord.y - 2.0*realBlur)) * 0.15;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x - 4.47*realBlur, vTextureCoord.y - 2.0*realBlur)) * 0.15;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x, vTextureCoord.y + 4.0*realBlur)) * 0.15;"
+          ,
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x + 8.94*realBlur, vTextureCoord.y + 4.0 * realBlur)) * 0.15;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x - 8.94*realBlur, vTextureCoord.y + 4.0 * realBlur)) * 0.15;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x, vTextureCoord.y - 8.0*realBlur)) * 0.15;",
 
           "gl_FragColor = sum;",
 
