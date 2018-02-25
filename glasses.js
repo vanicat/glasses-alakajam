@@ -31,7 +31,7 @@ TheGame.prototype = {
     this.map = this.game.add.tilemap(this.mapName)
     this.map.addTilesetImage('tilleset', 'tilleset')
 
-    this.map.setCollision(1, true, this.layer)
+    this.map.setCollision([0, 1, 2, 3, 4, 5, 6, 7, 8], true, this.layer)
 
     this.layer = this.map.createLayer('background')
     this.layer.resizeWorld()
