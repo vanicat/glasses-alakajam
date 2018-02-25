@@ -3,13 +3,18 @@ var TheGame = function (game, map) {
   this.camera = game.camera
   this.pause = false
   this.map = map
-  this.light = 150
-  this.view = 100
+  this.light = undefined
+  this.view = undefined
   this.blur = undefined
   this.dark = undefined
 }
 
 TheGame.prototype = {
+  init: function (light, view) {
+    this.light = light
+    this.view = view
+  },
+
   preload: function () {
   },
 

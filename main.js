@@ -24,7 +24,7 @@ Starting.prototype = {
 
   update: function () {
     if (this.pad1.isDown(Phaser.Gamepad.XBOX360_START)) {
-      this.game.state.start('glasses')
+      this.game.state.start('glasses', true, false, 200, 150)
     }
   },
 
