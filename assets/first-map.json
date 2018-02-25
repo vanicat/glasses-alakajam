@@ -20,6 +20,14 @@
                  "height":32,
                  "id":16,
                  "name":"",
+                 "properties":
+                    {
+                     "light":400
+                    },
+                 "propertytypes":
+                    {
+                     "light":"int"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,

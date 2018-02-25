@@ -111,7 +111,11 @@
 </data>
  </layer>
  <objectgroup name="GameObject">
-  <object id="16" gid="91" x="1119" y="1561" width="32" height="32"/>
+  <object id="16" gid="91" x="1119" y="1561" width="32" height="32">
+   <properties>
+    <property name="light" type="int" value="400"/>
+   </properties>
+  </object>
   <object id="18" name="start" gid="92" x="1178" y="1368" width="32" height="32"/>
  </objectgroup>
 </map>

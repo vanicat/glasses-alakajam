@@ -137,14 +137,14 @@
          style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     </g>
     <ellipse
-       style="fill:#241c1c"
+       style="fill:#aa4400"
        id="path77"
        cx="15.781235"
        cy="312.17966"
        rx="1.640625"
        ry="5.859375" />
     <rect
-       style="fill:#241c1c;stroke-width:0.9770084"
+       style="fill:#aa4400;stroke-width:0.9770084"
        id="rect81"
        width="3.28125"
        height="12.1875"

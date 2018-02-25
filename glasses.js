@@ -41,6 +41,7 @@ TheGame.prototype = {
 
   update: function () {
     this.game.physics.arcade.collide(this.player, this.layer)
+    this.game.physics.arcade.overlap(this.player, this.lamps, this.collectLamp, null, this)
 
     this.movePlayer()
   },
@@ -57,10 +58,13 @@ TheGame.prototype = {
     }
   },
 
-  light: function (power) {
-    if (power > this.light) {
-      this.dark = power
+  collectLamp: function (player, lamp) {
+    console.log(lamp.light, this.light, this.black.limit)
+    if (lamp.light > this.light) {
+      this.light = lamp.light
+      this.black.limit = this.light
     }
+    lamp.kill()
   },
 
   view: function (dist) {
@@ -100,7 +104,7 @@ TheGame.prototype = {
     this.black.limit = this.light
     this.black.centerx = this.game.width / 2
     this.black.centery = this.game.height / 2
-    this.layer.filters = [this.blur, this.black]
+    this.world.filters = [this.blur, this.black]
   },
 
   createPlayer: function () {
