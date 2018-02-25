@@ -23,7 +23,6 @@ TheGame.prototype = {
     this.view = view
     this.level = level
     this.mapName = TheGame.levels[level]
-    console.log(this.level, this.mapName)
   },
 
   preload: function () {
