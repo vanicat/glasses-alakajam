@@ -2,7 +2,7 @@ var booting = {
   create: function () {
     var style = { font: 'bold 32px Arial', fill: '#fff', boundsAlignH: 'center', boundsAlignV: 'middle' }
 
-    this.game.add.text(0, 0, 'Better with a gamepad. Start or enter to continue', style)
+    this.game.add.text(this.game.centerx, 0, 'It\'s a bad idea to be lost in a cave without glasses', style)
 
     this.game.state.start('loading')
   }
@@ -41,7 +41,12 @@ Starting.prototype = {
 
     var style = { font: 'bold 32px Arial', fill: '#fff', boundsAlignH: 'center', boundsAlignV: 'middle' }
 
-    this.game.add.text(0, 0, 'Better with a gamepad. Start or enter to continue', style)
+    this.game.add.text(0, 0, 'It\'s a bad idea to be lost in a cave without glasses', style)
+    this.game.add.text(0, 32 * 1, 'Let\'s look for a way out', style)
+    this.game.add.text(0, 32 * 3, 'Better with a gamepad.', style)
+    this.game.add.text(0, 32 * 4, 'Cursor key or left stick to move.', style)
+    this.game.add.text(0, 32 * 5, 'Space or button A for action.', style)
+    this.game.add.text(0, 32 * 7, 'Start or enter to continue', style)
 
     this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER)
   },
