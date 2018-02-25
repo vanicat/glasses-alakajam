@@ -98,10 +98,12 @@ TheGame.prototype = {
   },
 
   success: function (player, goal) {
-    if (goal.next_map) {
-      this.game.state.start(goal.next_map)
-    } else {
-      this.game.state.start('main')
+    if (this.action) {
+      if (goal.next_map) {
+        this.game.state.start(goal.next_map)
+      } else {
+        this.game.state.start('main')
+      }
     }
   },
 
