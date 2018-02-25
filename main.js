@@ -82,7 +82,7 @@ window.onload = function () {
   Phaser.Gamepad.XBOX360_DPAD_LEFT_RIGHT = 6
   Phaser.Gamepad.XBOX360_DPAD_UP_DOWN = 7
 
-  var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.WEBGL, '')
+  var game = new Phaser.Game(Math.min(window.innerWidth, 1800), Math.min(window.innerHeight, 1000), Phaser.WEBGL, '')
   game.state.add('loading', loading)
   game.state.add('main', new Starting(game))
   game.state.add('glasses', new TheGame(game))
