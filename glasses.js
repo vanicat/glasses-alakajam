@@ -59,7 +59,6 @@ TheGame.prototype = {
   },
 
   collectLamp: function (player, lamp) {
-    console.log(lamp.light, this.light, this.black.limit)
     if (lamp.light > this.light) {
       this.light = lamp.light
       this.black.limit = this.light
