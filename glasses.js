@@ -1,3 +1,5 @@
+const SPEED = 200
+
 var TheGame = function (game, map) {
   this.game = game
   this.camera = game.camera
@@ -10,6 +12,7 @@ var TheGame = function (game, map) {
   this.dark = undefined
   this.glasses = undefined
   this.lamps = undefined
+  this.cursors = undefined
 }
 
 TheGame.prototype = {
@@ -38,6 +41,7 @@ TheGame.prototype = {
     this.createObjects()
 
     this.pad1 = this.game.input.gamepad.pad1
+    this.cursors = this.game.input.keyboard.createCursorKeys()
 
     this.createShader()
   },
@@ -88,22 +92,46 @@ TheGame.prototype = {
   },
 
   movePlayer: function () {
-    var leftStickX = this.pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X)
-    var leftStickY = this.pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y)
+    var vx = 0
+    var vy = 0
 
-    if (!leftStickX) {
-      leftStickX = 0
-    }
-    if (!leftStickY) {
-      leftStickY = 0
+    if (this.pad1.connected) {
+      var leftStickX = this.pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X)
+      var leftStickY = this.pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y)
+
+      if (!leftStickX) {
+        leftStickX = 0
+      }
+      if (!leftStickY) {
+        leftStickY = 0
+      }
+
+      vx = leftStickX * SPEED
+      vy = leftStickY * SPEED
     }
 
-    this.player.body.velocity.x = leftStickX * 100
-    this.player.body.velocity.y = leftStickY * 100
-
-    if (leftStickX || leftStickY) {
-      this.player.rotation = Math.atan2(leftStickX, -leftStickY)
+    if (this.cursors.left.isDown) {
+      vx = -SPEED
     }
+
+    if (this.cursors.right.isDown) {
+      vx = SPEED
+    }
+
+    if (this.cursors.up.isDown) {
+      vy = -SPEED
+    }
+
+    if (this.cursors.down.isDown) {
+      vy = SPEED
+    }
+
+    if (vx || vy) {
+      this.player.rotation = Math.atan2(vx, -vy)
+    }
+
+    this.player.body.velocity.x = vx
+    this.player.body.velocity.y = vy
   },
 
   createShader: function () {
