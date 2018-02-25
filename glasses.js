@@ -84,10 +84,9 @@ TheGame.prototype = {
   },
 
   collectGlasses: function (player, glasses) {
-    if (glasses.power > this.view) {
-      this.view = glasses.power
-      this.blur.limit = this.view
-    }
+    this.view = glasses.power
+    this.blur.limit = this.view
+
     glasses.kill()
   },
 

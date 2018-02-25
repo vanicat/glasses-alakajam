@@ -2,12 +2,6 @@
 <map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="120" height="80" tilewidth="32" tileheight="32" nextobjectid="25">
  <tileset firstgid="1" name="tilleset" tilewidth="32" tileheight="32" tilecount="100" columns="10">
   <image source="tilleset.svg" width="320" height="320"/>
-  <tile id="90" type="lamp"/>
-  <tile id="91" type="start"/>
-  <tile id="92" type="glasses"/>
-  <tile id="93" type="end"/>
-  <tile id="94" type="switchon"/>
-  <tile id="95" type="switchoff"/>
  </tileset>
  <layer name="background" width="120" height="80">
   <data encoding="csv">
