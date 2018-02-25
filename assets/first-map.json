@@ -46,6 +46,26 @@
                  "width":32,
                  "x":1178,
                  "y":1368
+                }, 
+                {
+                 "gid":93,
+                 "height":32,
+                 "id":20,
+                 "name":"",
+                 "properties":
+                    {
+                     "power":700
+                    },
+                 "propertytypes":
+                    {
+                     "power":"int"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1319,
+                 "y":1530
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -53,7 +73,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":20,
+ "nextobjectid":21,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.0.3",
@@ -83,6 +103,10 @@
              "91":
                 {
                  "type":"start"
+                },
+             "92":
+                {
+                 "type":"glasses"
                 }
             },
          "tilewidth":32

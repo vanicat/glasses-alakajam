@@ -8,6 +8,8 @@ var TheGame = function (game, map) {
   this.view = undefined
   this.blur = undefined
   this.dark = undefined
+  this.glasses = undefined
+  this.lamps = undefined
 }
 
 TheGame.prototype = {
@@ -42,6 +44,7 @@ TheGame.prototype = {
   update: function () {
     this.game.physics.arcade.collide(this.player, this.layer)
     this.game.physics.arcade.overlap(this.player, this.lamps, this.collectLamp, null, this)
+    this.game.physics.arcade.overlap(this.player, this.glasses, this.collectGlasses, null, this)
 
     this.movePlayer()
   },
@@ -66,10 +69,12 @@ TheGame.prototype = {
     lamp.kill()
   },
 
-  view: function (dist) {
-    if (dist > this.view) {
-      this.view = dist
+  collectGlasses: function (player, glasses) {
+    if (glasses.power > this.view) {
+      this.view = glasses.power
+      this.blur.limit = this.view
     }
+    glasses.kill()
   },
 
   movePlayer: function () {
@@ -119,5 +124,9 @@ TheGame.prototype = {
     this.lamps = this.game.add.group()
     this.lamps.enableBody = true
     this.map.createFromObjects('GameObject', 91, 'lamp', 0, true, false, this.lamps)
+
+    this.glasses = this.game.add.group()
+    this.glasses.enableBody = true
+    this.map.createFromObjects('GameObject', 93, 'glasses', 0, true, false, this.glasses)
   }
 }
