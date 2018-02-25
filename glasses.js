@@ -78,8 +78,6 @@ TheGame.prototype = {
       leftStickY = 0
     }
 
-    console.log(leftStickX, leftStickY)
-
     this.player.body.velocity.x = leftStickX * 100
     this.player.body.velocity.y = leftStickY * 100
 
