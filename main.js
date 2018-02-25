@@ -50,6 +50,21 @@ Starting.prototype = {
     this.game.add.text(0, 32 * 7, 'Start or enter to continue', style)
 
     this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER)
+
+    this.createSound()
+  },
+
+  createSound: function () {
+    TheGame.walkingSound = this.game.add.audio('marche')
+    TheGame.walkingSound.allowMultiple = false
+
+    TheGame.tockSound = this.game.add.audio('aye')
+    TheGame.tockSound.allowMultiple = false
+    TheGame.tockSound.maybePlay = function () {
+      if (!this.isPlaying) {
+        this.play('', 2, 0.5)
+      }
+    }
   },
 
   update: function () {

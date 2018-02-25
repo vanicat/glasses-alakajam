@@ -43,7 +43,6 @@ TheGame.prototype = {
     this.createPlayer()
     this.createGoal()
     this.createObjects()
-    this.createSound()
 
     this.pad1 = this.game.input.gamepad.pad1
     this.cursors = this.game.input.keyboard.createCursorKeys()
@@ -160,48 +159,35 @@ TheGame.prototype = {
     if (vx < 0 && blocked.left) {
       vx = 0
       if (!wasBlocked.left) {
-        this.aye.maybePlay()
+        TheGame.tockSound.maybePlay()
       }
     }
 
     if (vx > 0 && blocked.right) {
       vx = 0
       if (!wasBlocked.left) {
-        this.aye.maybePlay()
+        TheGame.tockSound.maybePlay()
       }
     }
     if (vy < 0 && blocked.up) {
       vy = 0
       if (!wasBlocked.left) {
-        this.aye.maybePlay()
+        TheGame.tockSound.maybePlay()
       }
     }
     if (vy > 0 && blocked.down) {
       vy = 0
       if (!wasBlocked.left) {
-        this.aye.maybePlay()
+        TheGame.tockSound.maybePlay()
       }
     }
 
     if (vx || vy) {
-      if (!this.walkingSound.isPlaying) {
-        this.walkingSound.play('', 1, 1, true)
+      if (!TheGame.walkingSound.isPlaying) {
+        TheGame.walkingSound.play('', 1, 1, true)
       }
     } else {
-      this.walkingSound.stop()
-    }
-  },
-
-  createSound: function () {
-    this.walkingSound = this.game.add.audio('marche')
-    this.walkingSound.allowMultiple = false
-
-    this.aye = this.game.add.audio('aye')
-    this.aye.allowMultiple = false
-    this.aye.maybePlay = function () {
-      if (!this.isPlaying) {
-        this.play('', 2, 0.5)
-      }
+      TheGame.walkingSound.stop()
     }
   },
 
