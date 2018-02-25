@@ -23,6 +23,7 @@ TheGame.prototype = {
     this.view = view
     this.level = level
     this.mapName = TheGame.levels[level]
+    console.log(this.level, this.mapName)
   },
 
   preload: function () {
@@ -102,8 +103,9 @@ TheGame.prototype = {
 
   success: function (player, goal) {
     if (this.action) {
-      if (goal.next_map) {
-        this.game.state.start(goal.next_map)
+      this.level += 1
+      if (this.level < TheGame.nbLevels) {
+        this.game.state.restart(true, false, this.level, this.light, this.view)
       } else {
         this.game.state.start('main')
       }
@@ -172,8 +174,6 @@ TheGame.prototype = {
     this.start = this.findObject('start')
     this.player = this.game.add.sprite(this.start.x, this.start.y, 'theman')
     this.player.anchor.setTo(0.5, 0.5)
-
-    console.log(this.player)
 
     this.physics.enable(this.player, Phaser.Physics.ARCADE)
     var xoffset = (this.player.width - 36) / 2

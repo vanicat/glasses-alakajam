@@ -1,4 +1,5 @@
 TheGame.levels = [
-  'fst-map',
+  'first-map',
   'snd-map'
 ]
+TheGame.nbLevels = TheGame.levels.length
