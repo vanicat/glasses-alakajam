@@ -53,6 +53,6 @@ window.onload = function () {
 
   var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.WEBGL, '')
   game.state.add('main', new Starting(game))
-  game.state.add('glasses', new TheGame(game))
+  game.state.add('glasses', new TheGame(game, 'fst-map'))
   game.state.start('main')
 }

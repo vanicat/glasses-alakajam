@@ -1,7 +1,8 @@
-var TheGame = function (game) {
+var TheGame = function (game, map) {
   this.game = game
   this.camera = game.camera
   this.pause = false
+  this.map = map
 }
 
 TheGame.prototype = {
@@ -12,7 +13,7 @@ TheGame.prototype = {
     this.game.stage.backgroundColor = '#736357'
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
 
-    this.map = this.game.add.tilemap('fst-map')
+    this.map = this.game.add.tilemap(this.map)
     this.map.addTilesetImage('tilleset', 'tilleset')
 
     this.map.setCollision(1, true, this.layer)
