@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="12">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="14">
  <tileset firstgid="1" name="tilleset" tilewidth="32" tileheight="32" tilecount="100" columns="10">
   <image source="tilleset.svg" width="320" height="320"/>
+  <tile id="1" type="light"/>
  </tileset>
  <layer name="background" width="100" height="100">
   <data encoding="csv">
@@ -108,6 +109,11 @@
 </data>
  </layer>
  <objectgroup name="GameObject">
-  <object id="11" name="start" gid="3" x="292" y="289" width="32" height="32"/>
+  <object id="12" name="start" type="start" gid="3" x="1219" y="1407" width="32" height="32"/>
+  <object id="13" name="l1" type="light" gid="2" x="1130" y="1564" width="32" height="32">
+   <properties>
+    <property name="light" type="int" value="400"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
