@@ -24,8 +24,7 @@ Phaser.Filter.MyBlur = function (game) {
 
           "vec4 sum = vec4(0.0);",
           "float dist = length(gl_FragCoord.xy   - center);",
-          "float realBlur = blur;",
-          "if (dist < limit) realBlur = blur / 2.0;",
+          "float realBlur = blur * dist / limit;",
           "if (2.0*dist < limit) realBlur = 0.0;",
 
           "sum += texture2D(uSampler, vec2(vTextureCoord.x, vTextureCoord.y)) * 0.1;",
