@@ -29,6 +29,18 @@ TheGame.prototype = {
     this.camera.follow(this.player)
 
     this.pad1 = this.game.input.gamepad.pad1
+
+    this.blur = this.game.add.filter('MyBlur')
+
+    this.blur.blur = 20
+    this.blur.setResolution(this.game.width, this.game.height)
+    console.log(this.game.height, this.game.width)
+    this.blur.centerx = this.game.width / 2
+    this.blur.centery = this.game.height / 2
+
+    this.blur.limit = 100
+
+    this.layer.filters = [this.blur]
   },
 
   update: function () {

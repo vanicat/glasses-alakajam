@@ -7,6 +7,8 @@ Starting.prototype = {
     this.game.load.image('theman', 'assets/theman.svg')
     this.game.load.tilemap('fst-map', 'assets/first-map.json', null, Phaser.Tilemap.TILED_JSON)
 
+    this.game.load.script('MyBlur', 'filters/MyBlur.js')
+
     this.load.image('tilleset', 'assets/tilleset.svg')
   },
 
@@ -49,7 +51,7 @@ window.onload = function () {
   Phaser.Gamepad.XBOX360_DPAD_LEFT_RIGHT = 6
   Phaser.Gamepad.XBOX360_DPAD_UP_DOWN = 7
 
-  var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, '')
+  var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.WEBGL, '')
   game.state.add('main', new Starting(game))
   game.state.add('glasses', new TheGame(game))
   game.state.start('main')
