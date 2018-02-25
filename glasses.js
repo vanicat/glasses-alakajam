@@ -43,6 +43,7 @@ TheGame.prototype = {
     this.createPlayer()
     this.createGoal()
     this.createObjects()
+    this.createSound()
 
     this.pad1 = this.game.input.gamepad.pad1
     this.cursors = this.game.input.keyboard.createCursorKeys()
@@ -114,6 +115,10 @@ TheGame.prototype = {
     var vx = 0
     var vy = 0
 
+    var blocked = this.player.body.blocked
+    var wasBlocked = this.wasBlocked || blocked
+    this.wasBlocked = blocked
+
     if (this.pad1.connected) {
       var leftStickX = this.pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X)
       var leftStickY = this.pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y)
@@ -151,6 +156,53 @@ TheGame.prototype = {
 
     this.player.body.velocity.x = vx
     this.player.body.velocity.y = vy
+
+    if (vx < 0 && blocked.left) {
+      vx = 0
+      if (!wasBlocked.left) {
+        this.aye.maybePlay()
+      }
+    }
+
+    if (vx > 0 && blocked.right) {
+      vx = 0
+      if (!wasBlocked.left) {
+        this.aye.maybePlay()
+      }
+    }
+    if (vy < 0 && blocked.up) {
+      vy = 0
+      if (!wasBlocked.left) {
+        this.aye.maybePlay()
+      }
+    }
+    if (vy > 0 && blocked.down) {
+      vy = 0
+      if (!wasBlocked.left) {
+        this.aye.maybePlay()
+      }
+    }
+
+    if (vx || vy) {
+      if (!this.walkingSound.isPlaying) {
+        this.walkingSound.play('', 1, 1, true)
+      }
+    } else {
+      this.walkingSound.stop()
+    }
+  },
+
+  createSound: function () {
+    this.walkingSound = this.game.add.audio('marche')
+    this.walkingSound.allowMultiple = false
+
+    this.aye = this.game.add.audio('aye')
+    this.aye.allowMultiple = false
+    this.aye.maybePlay = function () {
+      if (!this.isPlaying) {
+        this.play('', 2, 0.5)
+      }
+    }
   },
 
   createShader: function () {

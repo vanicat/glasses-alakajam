@@ -10,6 +10,9 @@ var loading = {
     this.game.load.spritesheet('switch', 'assets/switch.svg', 32, 32)
     this.game.load.image('glasses', 'assets/glasses.svg')
 
+    this.game.load.audio('aye', 'assets/boom.mp3')
+    this.game.load.audio('marche', 'assets/marche.mp3')
+
     for (let map in TheGame.levels) {
       let mapname = TheGame.levels[map]
       this.game.load.tilemap(mapname, 'assets/' + mapname + '.json', null, Phaser.Tilemap.TILED_JSON)
