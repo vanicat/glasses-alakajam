@@ -16,36 +16,28 @@
          "name":"GameObject",
          "objects":[
                 {
-                 "gid":3,
+                 "gid":91,
                  "height":32,
-                 "id":12,
-                 "name":"start",
+                 "id":16,
+                 "name":"",
                  "rotation":0,
-                 "type":"start",
+                 "type":"",
                  "visible":true,
                  "width":32,
-                 "x":1219,
-                 "y":1407
+                 "x":1119,
+                 "y":1561
                 }, 
                 {
-                 "gid":2,
+                 "gid":92,
                  "height":32,
-                 "id":13,
-                 "name":"l1",
-                 "properties":
-                    {
-                     "light":400
-                    },
-                 "propertytypes":
-                    {
-                     "light":"int"
-                    },
+                 "id":18,
+                 "name":"start",
                  "rotation":0,
-                 "type":"light",
+                 "type":"",
                  "visible":true,
                  "width":32,
-                 "x":1130,
-                 "y":1564
+                 "x":1178,
+                 "y":1368
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -53,7 +45,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":14,
+ "nextobjectid":20,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.0.3",
@@ -75,6 +67,14 @@
              "1":
                 {
                  "type":"light"
+                },
+             "90":
+                {
+                 "type":"lamp"
+                },
+             "91":
+                {
+                 "type":"start"
                 }
             },
          "tilewidth":32

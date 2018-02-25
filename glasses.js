@@ -32,6 +32,7 @@ TheGame.prototype = {
     this.layer.resizeWorld()
 
     this.createPlayer()
+    this.createObjects()
 
     this.pad1 = this.game.input.gamepad.pad1
 
@@ -109,5 +110,11 @@ TheGame.prototype = {
     this.physics.enable(this.player, Phaser.Physics.ARCADE)
 
     this.camera.follow(this.player)
+  },
+
+  createObjects: function () {
+    this.lamps = this.game.add.group()
+    this.lamps.enableBody = true
+    this.map.createFromObjects('GameObject', 91, 'lamp', 0, true, false, this.lamps)
   }
 }
