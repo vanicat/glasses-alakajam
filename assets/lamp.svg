@@ -45,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -55,14 +55,14 @@
      inkscape:label="Calque 1"
      transform="translate(-3.1875149,-1.5547039)">
     <ellipse
-       style="fill:#241c1c"
+       style="fill:#c87137"
        id="path77"
        cx="15.45311"
        cy="24.585922"
        rx="1.640625"
        ry="5.859375" />
     <rect
-       style="fill:#241c1c;stroke-width:0.9770084"
+       style="fill:#c87137;stroke-width:0.9770084"
        id="rect81"
        width="3.28125"
        height="12.1875"
