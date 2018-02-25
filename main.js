@@ -1,15 +1,9 @@
-var booting = {
-  create: function () {
-    var style = { font: 'bold 32px Arial', fill: '#fff', boundsAlignH: 'center', boundsAlignV: 'middle' }
-
-    this.game.add.text(this.game.centerx, 0, 'It\'s a bad idea to be lost in a cave without glasses', style)
-
-    this.game.state.start('loading')
-  }
-}
-
 var loading = {
   preload: function () {
+    var style = { font: 'bold 32px Arial', fill: '#fff', boundsAlignH: 'center', boundsAlignV: 'middle' }
+
+    this.game.add.text(this.game.centerx, 0, 'Loading', style)
+
     this.game.load.image('theman', 'assets/theman.svg')
     this.game.load.image('lamp', 'assets/lamp.svg')
     this.game.load.image('empty', 'assets/empty.svg')
@@ -82,9 +76,8 @@ window.onload = function () {
   Phaser.Gamepad.XBOX360_DPAD_UP_DOWN = 7
 
   var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.WEBGL, '')
-  game.state.add('booting', booting)
   game.state.add('loading', loading)
   game.state.add('main', new Starting(game))
   game.state.add('glasses', new TheGame(game, 'fst-map'))
-  game.state.start('booting')
+  game.state.start('loading')
 }
