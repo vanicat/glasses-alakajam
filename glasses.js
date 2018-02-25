@@ -13,6 +13,7 @@ var TheGame = function (game, map) {
   this.glasses = undefined
   this.lamps = undefined
   this.cursors = undefined
+  this.switch = undefined
 }
 
 TheGame.prototype = {
@@ -42,15 +43,19 @@ TheGame.prototype = {
 
     this.pad1 = this.game.input.gamepad.pad1
     this.cursors = this.game.input.keyboard.createCursorKeys()
+    this.spaceKey = this.game.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR)
 
     this.createShader()
   },
 
   update: function () {
+    this.action = this.pad1.isDown(Phaser.Gamepad.XBOX360_A) || this.spaceKey.isDown
+
     this.game.physics.arcade.collide(this.player, this.layer)
     this.game.physics.arcade.overlap(this.player, this.lamps, this.collectLamp, null, this)
     this.game.physics.arcade.overlap(this.player, this.glasses, this.collectGlasses, null, this)
     this.game.physics.arcade.overlap(this.player, this.goal, this.success, null, this)
+    this.game.physics.arcade.overlap(this.player, this.switch, this.turnOnSwitch, null, this)
 
     this.movePlayer()
   },
@@ -81,6 +86,15 @@ TheGame.prototype = {
       this.blur.limit = this.view
     }
     glasses.kill()
+  },
+
+  turnOnSwitch: function (player, s) {
+    if (!s.isOn && this.action) {
+      s.isOn = true
+      s.frame = 1
+      this.map.removeTile(s.gate1x, s.gate1y)
+      this.map.removeTile(s.gate2x, s.gate2y)
+    }
   },
 
   success: function (player, goal) {
@@ -174,5 +188,9 @@ TheGame.prototype = {
     this.glasses = this.game.add.group()
     this.glasses.enableBody = true
     this.map.createFromObjects('GameObject', 93, 'glasses', 0, true, false, this.glasses)
+
+    this.switch = this.game.add.group()
+    this.switch.enableBody = true
+    this.map.createFromObjects('GameObject', 95, 'switch', 0, true, false, this.switch)
   }
 }

@@ -13,6 +13,7 @@ var loading = {
     this.game.load.image('theman', 'assets/theman.svg')
     this.game.load.image('lamp', 'assets/lamp.svg')
     this.game.load.image('empty', 'assets/empty.svg')
+    this.game.load.spritesheet('switch', 'assets/switch.svg', 32, 32)
     this.game.load.image('glasses', 'assets/glasses.svg')
     this.game.load.tilemap('fst-map', 'assets/first-map.json', null, Phaser.Tilemap.TILED_JSON)
 
