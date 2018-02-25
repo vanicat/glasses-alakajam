@@ -34,6 +34,7 @@ TheGame.prototype = {
     this.layer.resizeWorld()
 
     this.createPlayer()
+    this.createGoal()
     this.createObjects()
 
     this.pad1 = this.game.input.gamepad.pad1
@@ -45,6 +46,7 @@ TheGame.prototype = {
     this.game.physics.arcade.collide(this.player, this.layer)
     this.game.physics.arcade.overlap(this.player, this.lamps, this.collectLamp, null, this)
     this.game.physics.arcade.overlap(this.player, this.glasses, this.collectGlasses, null, this)
+    this.game.physics.arcade.overlap(this.player, this.goal, this.success, null, this)
 
     this.movePlayer()
   },
@@ -75,6 +77,14 @@ TheGame.prototype = {
       this.blur.limit = this.view
     }
     glasses.kill()
+  },
+
+  success: function (player, goal) {
+    if (goal.next_map) {
+      this.game.state.start(goal.next_map)
+    } else {
+      this.game.state.start('main')
+    }
   },
 
   movePlayer: function () {
@@ -118,6 +128,12 @@ TheGame.prototype = {
     this.physics.enable(this.player, Phaser.Physics.ARCADE)
 
     this.camera.follow(this.player)
+  },
+
+  createGoal: function () {
+    this.end = this.findObject('end')
+    this.goal = this.game.add.sprite(this.end.x, this.end.y, 'empty')
+    this.physics.enable(this.goal, Phaser.Physics.ARCADE)
   },
 
   createObjects: function () {

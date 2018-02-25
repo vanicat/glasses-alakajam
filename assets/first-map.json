@@ -66,6 +66,18 @@
                  "width":32,
                  "x":1319,
                  "y":1530
+                }, 
+                {
+                 "gid":94,
+                 "height":32,
+                 "id":21,
+                 "name":"end",
+                 "rotation":0,
+                 "type":"end",
+                 "visible":true,
+                 "width":32,
+                 "x":1410,
+                 "y":1212
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -73,7 +85,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":21,
+ "nextobjectid":23,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.0.3",
@@ -107,6 +119,10 @@
              "92":
                 {
                  "type":"glasses"
+                },
+             "93":
+                {
+                 "type":"end"
                 }
             },
          "tilewidth":32
