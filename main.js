@@ -99,7 +99,7 @@ Starting.prototype = {
 }
 
 window.onload = function () {
-  if (navigator.oscpu === 'Linux x86_64') {
+  if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
     Phaser.Gamepad.XBOX360_A = 0
     Phaser.Gamepad.XBOX360_B = 1
     Phaser.Gamepad.XBOX360_X = 2
